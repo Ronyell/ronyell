@@ -53,14 +53,6 @@ let info = {
   ],
   professional: [
     {
-      name: "International Business Machines Corporation - IBM",
-      date: "Mar, 2022 - Present",
-      position: "Research Assistant; Full Stack Developer",
-      description:
-        "Work in Progress (WIP)",
-      skills: []
-    },
-    {
       name: "Cofidential",
       date: "Jun, 2019 - Mar, 2022",
       position: "Full Stack Web Developer",
