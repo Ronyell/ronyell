@@ -17,7 +17,7 @@
         <span
           class="title text-center"
           :class="{ pgray: !nightMode, 'text-light': nightMode }"
-          >about me.</span
+          >Experiences.</span
         >
       </div>
       <hr
@@ -29,7 +29,7 @@
           <Timeline :data="education" :nightMode="nightMode" />
         </div>
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12">
-          <Timeline :data="experience" :nightMode="nightMode" />
+          <Timeline :data="professional" :nightMode="nightMode" />
         </div>
       </div>
     </div>
@@ -56,9 +56,9 @@ export default {
         title: "education",
         data: info.education,
       },
-      experience: {
-        title: "experiences",
-        data: info.experience,
+      professional: {
+        title: "professional",
+        data: info.professional,
       },
     };
   },

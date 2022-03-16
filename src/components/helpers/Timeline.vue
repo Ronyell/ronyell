@@ -27,7 +27,7 @@
           >
             <li class="m-0 pb-2">
               <div>
-                <div class="px-2 title2">{{ e.name }}, {{ e.place }}</div>
+                <div class="px-2 title2">{{ e.name }} {{ e.place }}</div>
                 <div class="px-2 title3">
                   {{ e.degree || e.position }}
                   {{ e.gpa ? "(" + e.gpa + ")" : "" }}
@@ -115,11 +115,11 @@ ul.timeline > li {
 }
 ul.timeline > li:before {
   content: " ";
-  background: rgb(212, 149, 97);
+  background: rgb(30,144,255);
   display: inline-block;
   position: absolute;
   border-radius: 50%;
-  border: 2px solid rgb(236, 159, 117);
+  border: 2px solid rgb(21, 129, 236);
   left: 20px;
   width: 20px;
   height: 20px;

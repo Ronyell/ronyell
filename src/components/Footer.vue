@@ -2,38 +2,35 @@
   <div class="bg-secondary">
     <div class="container py-3">
       <div class="row pt-1 align-items-center">
-        <div
-          class="col-xl-6 col-bg-6 col-md-6 col-sm-12 pbelow"
-          style="color: white;"
-        >
-          <span>© 2020 Copyright: Hrishikesh Paul</span>
-        </div>
-
-        <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12">
+        <div class="ml-auto">
           <div class="text-center">
             <button
               class="btn btn-outline-secondary mx-2 "
               @click="open('linkedin')"
+              v-tooltip.bottom="'LinkedIn'"
             >
               <i class="fab fa-linkedin"></i>
             </button>
             <button
               class="btn btn-outline-secondary mx-2"
               @click="open('github')"
+              v-tooltip.bottom="'GitHub'"
             >
               <i class="fab fa-github"></i>
             </button>
             <button
               class="btn btn-outline-secondary mx-2"
-              @click="open('angellist')"
+              @click="open('twitter')"
+              v-tooltip.bottom="'Twitter'"
             >
-              <i class="fab fa-angellist"></i>
+              <i class="fab fa-twitter"></i>
             </button>
             <button
               class="btn btn-outline-secondary mx-2"
-              @click="open('resume')"
+              @click="open('facebook')"
+              v-tooltip.bottom="'Facebook'"
             >
-              <i class="fa fa-file"></i>
+              <i class="fab fa-facebook"></i>
             </button>
           </div>
         </div>
@@ -64,11 +61,11 @@ export default {
         case "github":
           window.open(this.github, "_blank");
           break;
-        case "angellist":
-          window.open(this.angellist, "_blank");
+        case "twitter":
+          window.open(this.twitter, "_blank");
           break;
-        case "resume":
-          window.open(this.resume, "_blank");
+        case "facebook":
+          window.open(this.facebook, "_blank");
           break;
       }
     },

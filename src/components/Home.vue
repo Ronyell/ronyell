@@ -11,13 +11,13 @@
     >
       <div class="row align-items-center">
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12 text-center">
-          <img :src="picture" />
+          <img :src="picture" class="rounded" />
         </div>
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12 pt-5">
           <span
             class="home-title"
             :class="{ pgray: !nightMode, 'text-light': nightMode }"
-            >hello there!</span
+            >Hello there!</span
           >
           <div>
             <p v-html="description"></p>
@@ -39,17 +39,17 @@
             </button>
             <button
               class="btn btn-outline-secondary mx-2"
-              @click="open('angellist')"
-              v-tooltip.bottom="'AngelList'"
+              @click="open('twitter')"
+              v-tooltip.bottom="'Twitter'"
             >
-              <i class="fab fa-angellist"></i>
+              <i class="fab fa-twitter"></i>
             </button>
             <button
               class="btn btn-outline-secondary mx-2"
-              @click="open('resume')"
-              v-tooltip.bottom="'Resume'"
+              @click="open('facebook')"
+              v-tooltip.bottom="'Facebook'"
             >
-              <i class="fa fa-file"></i>
+              <i class="fab fa-facebook"></i>
             </button>
           </div>
         </div>
@@ -72,6 +72,9 @@ export default {
     nightMode: {
       type: Boolean,
     },
+    background: {
+      type: String,
+    }
   },
   data() {
     return {
@@ -80,8 +83,8 @@ export default {
       name: info.name,
       linkedin: info.links.linkedin,
       github: info.links.github,
-      angellist: info.links.angellist,
-      resume: info.links.resume
+      twitter: info.links.twitter,
+      facebook: info.links.facebook
     };
   },
   methods: {
@@ -93,11 +96,11 @@ export default {
         case "github":
           window.open(this.github, "_blank");
           break;
-        case "angellist":
-          window.open(this.angellist, "_blank");
+        case "twitter":
+          window.open(this.twitter, "_blank");
           break;
-        case "resume":
-          window.open(this.resume, "_blank");
+        case "facebook":
+          window.open(this.facebook, "_blank");
           break;
       }
     },
@@ -112,20 +115,22 @@ export default {
 }
 
 img {
+  margin-top: 0px;
   max-width: 300px;
-  margin-top: 60px;
-  transform: rotateY(180deg);
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  border: 3px solid grey;
 }
 
 @media only screen and (max-width: 580px) {
   img {
     object-fit: cover;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     height: 200px;
     width: 200px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 2px solid rgb(205, 205, 205);
+    border: 2px solid rgb(102, 157, 179);
   }
 }
 
@@ -158,6 +163,7 @@ p {
   text-align: justify;
   font-weight: 400;
 }
+
 
 /* LEAVES */
 </style>

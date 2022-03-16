@@ -2,12 +2,13 @@
   <div id="app" :class="{ 'text-dark': !nightMode, 'text-light': nightMode }">
     <Navbar @scroll="scrollTo" @nightMode="switchMode" :nightMode="nightMode" />
     <div class="parent">
-      <Home :nightMode="nightMode" />
+      <LandingPage :user="user" />
+      <Home :nightMode="nightMode" :background="background" />
       <About id="about" :nightMode="nightMode" />
       <Skills id="skills" :nightMode="nightMode" />
       <Portfolio id="portfolio" :nightMode="nightMode" />
-      <Recommendation :nightMode="nightMode" />
-      <Contact id="contact" :nightMode="nightMode" />
+      <!-- <Recommendation :nightMode="nightMode" /> -->
+      <!-- <Contact id="contact" :nightMode="nightMode" /> -->
       <Footer :nightMode="nightMode" />
     </div>
   </div>
@@ -22,6 +23,7 @@ import Portfolio from "./components/Portfolio";
 import Recommendation from "./components/Recommendation";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import LandingPage from "./components/LandingPage";
 
 import info from "../info";
 
@@ -36,11 +38,17 @@ export default {
     Recommendation,
     Contact,
     Footer,
+    LandingPage,
   },
   data() {
     return {
       nightMode: false,
       config: info.config,
+      background: info.background,
+      user: {
+        name: info.name,
+        status: info.status,
+      },
     };
   },
   created() {

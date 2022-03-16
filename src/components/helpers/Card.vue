@@ -29,22 +29,11 @@
           </div>
           <p
             class="title3 m-0 pb-2 pheight pt-1"
-            v-html="
-              portfolio.description.length > 100
-                ? portfolio.description.substring(0, 105) + '...'
-                : portfolio.description
-            "
+            v-html="portfolio.description"
           >
           </p>
         </div>
         <div class="text-center mt-2">
-          <button
-            href=""
-            class="btn-sm btn btn-outline-secondary no-outline"
-            @click.prevent="showModal"
-          >
-            read more
-          </button>
           <button
             href="#"
             class="btn-sm btn btn-outline-secondary no-outline ml-4"
@@ -206,5 +195,9 @@ div.img-div {
 
 .bg-dark4 {
   background-color: #494e55 !important;
+}
+
+.ml-4 {
+  margin-left: 0rem!important;
 }
 </style>

@@ -10,7 +10,7 @@
         <span
           class="title text-center"
           :class="{ pgray: !nightMode, 'text-light': nightMode }"
-          >skills.</span
+          >Skills.</span
         >
       </div>
       <hr
@@ -84,13 +84,13 @@ export default {
 }
 
 .fa {
-  color: rgb(212, 149, 97);
+  color: rgb(30,144,255);
   font-size: 40px;
   transition: all 0.5s;
 }
 
 .fas {
-  color: rgb(212, 149, 97);
+  color: rgb(30,144,255);
   font-size: 40px;
   /* font-weight: bold; */
   transition: all 0.5s;
