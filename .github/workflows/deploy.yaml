@@ -1,0 +1,33 @@
+name: deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    environment: github-pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - name: setup git auth
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          USERNAME: ${{ secrets.USERNAME }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: |
+          git config --global credential.helper store
+          echo "https://${ACCESS_TOKEN}:x-oauth-basic@github.com" > ~/.git-credentials
+          git config --global user.email $EMAIL
+          git config --global user.name $USERNAME
+      - name: deploy to rh-pages
+        run: |
+          npm install --force
+          NODE_ENV=production npm run build
+          cd dist
+          git init
+          git add -A
+          git commit -m "🚀 Deploy id ${GITHUB_RUN_ID}"
+          git push -f "https://github.com/${GITHUB_REPOSITORY}.git" master:rh-pages
