@@ -7,6 +7,9 @@ jobs:
   deploy:
     environment: github-pages
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 16.x, 18.x]
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
